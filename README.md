@@ -123,3 +123,59 @@ box 的尺寸。在原生的 DOM API 中写作 clientWidth 和 clientHeight，�
   margin: auto;
 }
 ```
+#### 图片上传图形 田---绘制
+```html
+<a href="" class="add" title="添加图片">添加图片</a>
+```
+```css
+.add{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    color: #ccc;
+    border: 2px dashed;
+    position: relative;
+    text-indent: -12em;
+    overflow: hidden;
+}
+.add:before, .add:after {
+    content: '';
+    position: absolute;
+    border: 2px solid;
+
+}
+.add:before {
+    width: 30px;
+    top: 49px;
+    left: 35px;
+}
+.add:after {
+    height: 30px;
+    top: 35px;
+    left: 49px;
+}
+.add:hover{
+    color: salmon;
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
