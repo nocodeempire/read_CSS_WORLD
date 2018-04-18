@@ -124,6 +124,9 @@ box 的尺寸。在原生的 DOM API 中写作 clientWidth 和 clientHeight，�
 }
 ```
 #### 图片上传图形 田---绘制
+┌ ┬ ┐
+├ ┼ ┤
+└ ┴ ┘
 ```html
 <a href="" class="add" title="添加图片">添加图片</a>
 ```
@@ -158,7 +161,14 @@ box 的尺寸。在原生的 DOM API 中写作 clientWidth 和 clientHeight，�
     color: salmon;
 }
 ```
-
+#### 朝下的等腰直角三角 ▼
+```css
+div {
+  width: 0;
+  border: 10px solid;
+  border-color: #f30 transparent transparent;
+}
+```
 
 
 
