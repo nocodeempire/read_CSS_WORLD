@@ -52,6 +52,9 @@ dot::before {
 <a href="">登录</a><a href="">注册</a>
 ```
  ```css
+ a {
+  padding: .25em 0;
+}
 a + a:before {
   content: "";
   font-size: 0;
