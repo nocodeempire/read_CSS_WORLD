@@ -101,3 +101,16 @@ box 的尺寸。在原生的 DOM API 中写作 clientWidth 和 clientHeight，�
 (true)方法，表示元素的外部尺寸，不仅包括 padding 和 border，还包括 margin，
 也就是元素的 margin box 的尺寸。没有相对应的原生的 DOM API。
 ```
+#### 更好的水平垂直居中的例子
+```css
+.father {
+  width: 300px; height:150px;
+  position: relative;
+}
+.son {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  width: 200px; height: 100px;
+  margin: auto;
+}
+```
