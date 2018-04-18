@@ -86,3 +86,17 @@ border-bottom: 10px solid;
 background-color: currentColor;
 background-clip: content-box;
 ```
+
+```html
+我们这里的各类“尺寸”命名和对应的盒子类型全部参考自 jQuery 中与尺寸相关 API 的名称。
+• 元素尺寸：对应 jQuery 中的$().width()和$().height()方法，包括 padding
+和 border，也就是元素的 border box 的尺寸。在原生的 DOM API 中写作 offsetWidth
+和 offsetHeight，所以，有时候也成为“元素偏移尺寸”。
+• 元素内部尺寸：对应 jQuery 中的$().innerWidth()和$().innerHeight()方法，
+表示元素的内部区域尺寸，包括 padding 但不包括 border，也就是元素的 padding
+box 的尺寸。在原生的 DOM API 中写作 clientWidth 和 clientHeight，所以，
+有时候也称为“元素可视尺寸”。
+• 元素外部尺寸：对应 jQuery 中的$().outerWidth(true)和$().outerHeight
+(true)方法，表示元素的外部尺寸，不仅包括 padding 和 border，还包括 margin，
+也就是元素的 margin box 的尺寸。没有相对应的原生的 DOM API。
+```
