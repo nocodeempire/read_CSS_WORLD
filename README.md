@@ -87,6 +87,7 @@ background-color: currentColor;
 background-clip: content-box;
 ```
 
+#### 其他
 ```html
 我们这里的各类“尺寸”命名和对应的盒子类型全部参考自 jQuery 中与尺寸相关 API 的名称。
 • 元素尺寸：对应 jQuery 中的$().width()和$().height()方法，包括 padding
