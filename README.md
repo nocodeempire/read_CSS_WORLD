@@ -2,8 +2,8 @@
 读css世界案例记录
 
 #### 正在加载...效果
-```html
 正在加载中<dot>...</dot>
+```css
 dot {
 display: inline-block;
 height: 1em;
