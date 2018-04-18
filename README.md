@@ -46,3 +46,17 @@ dot::before {
   color: #fff;
 }
  ```
+ #### 分隔符号 
+ 登录 | 注册
+ ```html
+<a href="">登录</a><a href="">注册</a>
+```
+ ```css
+a + a:before {
+  content: "";
+  font-size: 0;
+  padding: 10px 3px 1px;
+  margin-left: 6px;
+  border-left: 1px solid gray;
+}
+ ```
