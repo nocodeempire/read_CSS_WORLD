@@ -161,11 +161,12 @@ box 的尺寸。在原生的 DOM API 中写作 clientWidth 和 clientHeight，�
     color: salmon;
 }
 ```
-#### 朝下的等腰直角三角 ▼
+#### 朝下的三角 ▼
 ```css
 div {
   width: 0;
-  border: 10px solid;
+  border-width: 10px 15px;  /* 只设置一个的话是等腰直角三角形 */
+  border-style: solid;
   border-color: #f30 transparent transparent;
 }
 ```
