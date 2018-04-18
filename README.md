@@ -75,3 +75,14 @@ a + a:before {
   /* background-clip  设置元素的背景（背景图片或颜色）是否延伸到边框下面。 */
   background-clip: content-box;   
 ```
+#### 三条横线实现效果
+```css
+/* 实现原理是高度10的一个容器,着色 上下padding10px,画上下边框线, 设置background-clip: content-box只影响内容的背景色 */
+display: inline-block;
+width: 140px; height: 10px;
+padding: 35px 0;
+border-top: 10px solid;
+border-bottom: 10px solid;
+background-color: currentColor;
+background-clip: content-box;
+```
