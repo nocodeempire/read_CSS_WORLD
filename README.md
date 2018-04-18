@@ -78,13 +78,22 @@ a + a:before {
 #### 三条横线实现效果
 ```css
 /* 实现原理是高度10的一个容器,着色 上下padding10px,画上下边框线, 设置background-clip: content-box只影响内容的背景色 */
-display: inline-block;
-width: 140px; height: 10px;
-padding: 35px 0;
-border-top: 10px solid;
-border-bottom: 10px solid;
-background-color: currentColor;
-background-clip: content-box;
+.icon-menu {
+  display: inline-block;
+  width: 140px; height: 10px;
+  padding: 35px 0;
+  border-top: 10px solid;
+  border-bottom: 10px solid;
+  background-color: currentColor;
+  background-clip: content-box;
+}
+/* 方法2 */
+.icon-menu {
+  width: 120px;
+  height: 20px;
+  border-top: 60px double;
+  border-bottom: 20px solid;
+}
 ```
 
 #### 其他
