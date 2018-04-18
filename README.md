@@ -63,3 +63,15 @@ a + a:before {
   border-left: 1px solid gray;
 }
  ```
+#### 实心圆外面一个圈的实现效果
+```css
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  padding: 1px;
+  border: 1px solid;
+  border-radius: 50%;
+  background-color: currentColor;
+  /* background-clip  设置元素的背景（背景图片或颜色）是否延伸到边框下面。 */
+  background-clip: content-box;   
+```
