@@ -170,8 +170,24 @@ div {
   border-color: #f30 transparent transparent;
 }
 ```
-
-
+#### 多行文本垂直居中
+```html
+<div class="box">
+  <div class="content">基于行高实现的...</div>
+</div>
+```
+```css
+.box {
+  line-height: 120px;
+  background-color: #f0f3f9;
+}
+.content {
+  display: inline-block;
+  line-height: 20px;
+  margin: 0 20px;
+  vertical-align: middle;
+}
+```
 
 
 
