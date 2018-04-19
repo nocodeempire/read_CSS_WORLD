@@ -178,14 +178,14 @@ div {
 ```
 ```css
 .box {
-  line-height: 120px;
-  background-color: #f0f3f9;
+  line-height: 120px; /* 设置line-height使得box中元素居中 */
+  background-color: #f0f3f9;
 }
 .content {
   display: inline-block;
   line-height: 20px;
   margin: 0 20px;
-  vertical-align: middle;
+  vertical-align: middle;  /* 设置vertical-align: middle使得content元素middle居中 */
 }
 ```
 
