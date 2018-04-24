@@ -214,8 +214,8 @@ div {
 .container:after {
     content: "";
     display: inline-block;
-    height: 100%;
-    vertical-align: middle;
+    height: 100%; /* 更改百分比可以灵活控制垂直居中的比例 */
+    vertical-align: middle;
 }
 .dialog {
     display: inline-block;
