@@ -188,6 +188,44 @@ div {
   vertical-align: middle;  /* 设置vertical-align: middle使得content元素middle居中 */
 }
 ```
+#### 模态框水平垂直居中
+```html
+<div class="container">
+    <div class="dialog">
+        <div class="content">内容占位</div>
+    </div>
+</div>
+```
+```css
+.container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* for IE8 */
+    background: url(data:image/png;base64,iVB...g==);
+    /* for IE9+ */
+    background: rgba(0, 0, 0, .5), none;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 99;
+}
+.container:after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+.dialog {
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 6px;
+    background-color: #fff;
+    text-align: left;
+    white-space: normal;
+}
+```
 
 
 
