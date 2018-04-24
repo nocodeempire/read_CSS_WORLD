@@ -274,7 +274,15 @@ body {
   background: url(hot.gif);
 }
 ```
-
+#### 让网页字体跟随系统字体
+```css
+html { font: menu; }
+body { font-size: 16px; }
+html { font: small-caption; }
+body { font-size: 16px; }
+html { font: status-bar; }
+body { font-size: 16px; }
+```
 
 
 
