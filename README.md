@@ -112,10 +112,6 @@ box 的尺寸。在原生的 DOM API 中写作 clientWidth 和 clientHeight，�
 ```
 #### 更好的水平垂直居中的例子
 ```css
-.father {
-  width: 300px; height:150px;
-  position: relative;
-}
 .son {
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
