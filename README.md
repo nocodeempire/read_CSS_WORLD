@@ -268,8 +268,16 @@ body {
   border-radius: 6px;
 }
 ```
-
-
+#### 对于absolute新的认知
+如果没有给其父元素设定定位,absolute其实是占据自身的位置,不写任何tlrb等,直接margin等操作,即可实现位置变换, 下面例子是文字右上角hot图标
+```css
+.icon-hot {
+  position: absolute;
+  margin: -6px 0 0 2px;
+  width: 28px; height: 11px;
+  background: url(hot.gif);
+}
+css
 
 
 
