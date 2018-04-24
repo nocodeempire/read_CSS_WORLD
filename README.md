@@ -252,8 +252,22 @@ body {
   overflow: hidden;
 }
 ```
-
-
+#### 滚动条样式
+滚动条是可以自定义的。因为 IE 浏览器的自定义效果实在是比原生的还要难看，
+倒是支持-webkit-前缀的浏览器可以说说
+```css
+::-webkit-scrollbar { /* 血槽宽度 */
+  width: 8px; height: 8px;
+}
+::-webkit-scrollbar-thumb { /* 拖动条 */
+  background-color: rgba(0,0,0,.3);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-track { /* 背景槽 */
+  background-color: #ddd;
+  border-radius: 6px;
+}
+```
 
 
 
