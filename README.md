@@ -226,7 +226,9 @@ div {
     white-space: normal;
 }
 ```
-
+#### 获取滚动高度
+在 PC 端，窗体滚动高度可以使用 document.documentElement.scrollTop 获取，
+但是在移动端，可能就要使用 document.body.scrollTop 获取。
 
 
 
