@@ -277,7 +277,7 @@ body {
   width: 28px; height: 11px;
   background: url(hot.gif);
 }
-css
+```
 
 
 
