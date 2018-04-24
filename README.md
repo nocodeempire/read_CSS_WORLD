@@ -204,7 +204,7 @@ div {
     bottom: 0;
     left: 0;
     /* for IE8 */
-    background: url(data:image/png;base64,iVB...g==);
+    background: background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);
     /* for IE9+ */
     background: rgba(0, 0, 0, .5), none;
     text-align: center;
