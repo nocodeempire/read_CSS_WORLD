@@ -283,7 +283,100 @@ body { font-size: 16px; }
 html { font: status-bar; }
 body { font-size: 16px; }
 ```
-
+#### 双fixed 公司经常用 就写了个demo记录下
+````html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .container{
+            padding: 50px 0 0 0;
+        }
+        .fixhead{
+            width: 100%;
+            height: 50px;
+            background-color: pink;
+            position: fixed;
+            top: 0;
+        }
+        .bgc{
+            background-color: salmon;
+            width: 100%;
+            height: 150px;
+        }
+        .nav{
+            display: flex;
+            line-height: 50px;
+        }
+        .nav a {
+            flex: 1;
+            background-color: #eee;
+            text-align: center;
+        }
+        .libgc {
+            width: 100%;
+            height: 150px;
+        }
+        .libgc:nth-child(2n) {
+            background-color: cyan;
+        }
+        .libgc:nth-child(2n+1) {
+            background-color: lightblue;
+        }
+        .fix {
+            position: fixed;
+            top: 50px;
+            width: 100%;
+        }
+        .paddingbottom{
+            padding: 50px 0 0 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="fixhead"></div>
+        <div class="bgc"></div>
+        <div class="nav">
+            <a href="#">导航1</a>
+            <a href="#">导航2</a>
+            <a href="#">导航3</a>
+        </div>
+        <ul>
+            <li class="libgc"></li>
+            <li class="libgc"></li>
+            <li class="libgc"></li>
+            <li class="libgc"></li>
+            <li class="libgc"></li>
+            <li class="libgc"></li>
+            <li class="libgc"></li>
+        </ul>
+    </div>
+</body>
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script>
+    $(document).scroll(function(){
+        console.log($(document).scrollTop());
+        if($(document).scrollTop() >= $('.bgc').height()){
+            $('.nav').addClass('fix');
+            $('ul').addClass('paddingbottom');
+        } else {
+            $('.nav').removeClass('fix');
+            $('ul').removeClass('paddingbottom');
+        }
+    })
+</script>
+</html>
+````
 
 
 
