@@ -493,8 +493,32 @@ http://www.zhangxinxu.com/wordpress/2017/12/svg-filter-fuse-gooey-effect/
 </body>
 </html>
 ````
-
-
+#### 图片旋转
+由于rotate IE是不支持的, 所以最好的选择还是用canvas
+````html
+<canvas id="cv"></canvas>
+<img id="cvImg" width="128" height="96" src="mm1.jpg" />
+````
+````js
+window.onload = function(){
+    var canvas = document.getElementById("cv");
+    var oImg = document.getElementById("cvImg");
+    // 旋转后canvas标签的大小
+    canvas.height = 128;
+    canvas.width = 96;
+    // 绘图开始
+    var context = canvas.getContext("2d");
+    context.save();
+    // 改变中心点
+    context.translate(96,0);
+    // 旋转90°
+    context.rotate(Math.PI/2);
+    // 绘制
+    context.drawImage(oImg, 0, 0, 128, 96);
+    context.restore();
+    oImg.style.display = "none";
+};
+````
 
 
 
