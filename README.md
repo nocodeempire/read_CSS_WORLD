@@ -495,6 +495,7 @@ http://www.zhangxinxu.com/wordpress/2017/12/svg-filter-fuse-gooey-effect/
 ````
 #### 图片旋转
 由于rotate IE是不支持的, 所以最好的选择还是用canvas
+或者插件 jQuery图片旋转插件jQueryRotate.js
 ````html
 <canvas id="cv"></canvas>
 <img id="cvImg" width="128" height="96" src="mm1.jpg" />
