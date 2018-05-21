@@ -522,9 +522,25 @@ window.onload = function(){
 ````
 #### 视图 scroll offset等参数详解
 http://www.zhangxinxu.com/wordpress/2011/09/cssom%E8%A7%86%E5%9B%BE%E6%A8%A1%E5%BC%8Fcssom-view-module%E7%9B%B8%E5%85%B3%E6%95%B4%E7%90%86%E4%B8%8E%E4%BB%8B%E7%BB%8D/
-
-
-
-
-
+#### 隐藏非静音的、自动播放的 video
+这是个用户
+自定义样式的小技巧。避免了当页面加载时，自动播放有声音的 video 来干扰用户。如果是非静音的，就不显示 video：
+````css
+video[autoplay]:not([muted]) {
+  display: none;
+}
+````
+#### 逗号分隔的列表
+````css
+ul > li:not(:last-child)::after {
+  content: ",";
+}
+````
+#### 统一的垂直结构
+在一个元素内使用通用选择器(*)来创建一致的垂直结构：
+````css
+.intro > * {
+  margin-bottom: 1.25rem;
+}
+````
 
