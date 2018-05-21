@@ -543,7 +543,7 @@ ul > li:not(:last-child)::after {
   margin-bottom: 1.25rem;
 }
 ````
-#### 加载效果
+#### 加载效果<img src="http://www.zhangxinxu.com/study/201305/loading-css3.gif" width="32" height="32">
 ````html
 <div class="loading spin"></div>
 ````
