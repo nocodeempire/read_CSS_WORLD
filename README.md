@@ -538,11 +538,12 @@ ul > li:not(:last-child)::after {
 ````
 #### 统一的垂直结构
 在一个元素内使用通用选择器来创建一致的垂直结构：
+````css
 .intro > * {
   margin-bottom: 1.25rem;
 }
+````
 #### 加载效果
-<img src="http://www.zhangxinxu.com/study/201305/loading-css3.gif" width="32" height="32">
 ````html
 <div class="loading spin"></div>
 ````
