@@ -544,9 +544,31 @@ ul > li:not(:last-child)::after {
 }
 ````
 #### 加载效果
-````html
 <img src="http://www.zhangxinxu.com/study/201305/loading-css3.gif" width="32" height="32">
+````html
+<div class="loading spin"></div>
+````
+````css
+.loading {  // 需要看一下兼容性
+    width: 3px; height:3px;
+    border-radius: 100%;                      /* 圆角 */
+    box-shadow: 0 -10px 0 1px #333,           /* 上, 1px 扩展 */
+                10px 0px #333,                /* 右 */
+                0 10px #333,                  /* 下 */
+                -10px 0 #333,                 /* 左 */
 
+                -7px -7px 0 .5px #333,        /* 左上, 0.5px扩展 */
+                7px -7px 0 1.5px #333,        /* 右上, 1.5px扩展 */
+                7px 7px #333,                 /* 右下 */
+                -7px 7px #333;                /* 左下 */
+}
+.spin {
+    animation: spin 1s steps(8) infinite;
+}
+@keyframes spin {
+    from {transform: rotate(0deg);}
+      to {transform: rotate(360deg);}
+}
 ````
 
 
