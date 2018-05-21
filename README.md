@@ -543,4 +543,10 @@ ul > li:not(:last-child)::after {
   margin-bottom: 1.25rem;
 }
 ````
+#### 加载效果
+````html
+<img src="http://www.zhangxinxu.com/study/201305/loading-css3.gif" width="32" height="32">
+
+````
+
 
