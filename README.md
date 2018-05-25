@@ -16,7 +16,7 @@ dot {
 }
 dot::before {
   display: block;
-  content: '...\A..\A.';4.1 深入理解 content 61
+  content: '...\A..\A.';
   white-space: pre-wrap;
   animation: dot 3s infinite step-start both;
 }
