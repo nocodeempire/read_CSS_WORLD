@@ -570,8 +570,11 @@ ul > li:not(:last-child)::after {
 }
 ````
 #### 图片预加载与懒加载思路
+````text
 预加载: 字面意思就是预先加载, 判断用户行为预先加载. 例子是:三栏切换的案例,假设用户hover到第二个tab栏了,就加载第二个tab栏中的项目,这样在hover到mouseup这段时间,数据已经加载成功了,直接展示.防止了可能出现的空白.
 懒加载: 最常见的就是图片懒加载了.
 参考:http://www.zhangxinxu.com/wordpress/2016/06/image-preload-based-on-user-behavior/
+````
+
 
 
