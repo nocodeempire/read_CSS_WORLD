@@ -575,6 +575,15 @@ ul > li:not(:last-child)::after {
 懒加载: 最常见的就是图片懒加载了.
 参考:http://www.zhangxinxu.com/wordpress/2016/06/image-preload-based-on-user-behavior/
 ````
-
+#### 千位分隔符
+````html
+方法一：使用正则表达式
+String(Number).replace(/(\d)(?=(\d{3})+$)/g, "$1,");  // Number
+方法二：使用toLocaleString()方法
+Number.toLocaleString('en-US');
+// 对于中文场景下，toLocaleString('en-US')中的'en-US'理论上是可以缺省的，也就是直接(123456789).toLocaleString()也是可以得到123,456,789。
+// 但是如果你的产品可能海外用户使用，则保险起见，还是保留'en-US'。
+// 另外，对于IE edge之前的版本，Number.toLocaleString()会自动补上两位小数，如果是不需要的，需要自己额外过滤掉。
+````
 
 
