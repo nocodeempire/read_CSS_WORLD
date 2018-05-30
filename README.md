@@ -585,5 +585,29 @@ Number.toLocaleString('en-US');
 // 但是如果你的产品可能海外用户使用，则保险起见，还是保留'en-US'。
 // 另外，对于IE edge之前的版本，Number.toLocaleString()会自动补上两位小数，如果是不需要的，需要自己额外过滤掉。
 ````
-
+#### 订单甲减的效果
+<a href="javascript:" class="btn btn-plus" role="button" title="增加"></a>
+````css
+.btn {
+    display: inline-block;
+    background: #f0f0f0 no-repeat center; // 主要是这行和下面的.
+    border: 1px solid #d0d0d0;
+    width: 24px; height: 24px;    
+    border-radius: 2px;
+    box-shadow: 0 1px rgba(100,100,100,.1);
+    color: #666;
+    transition: color .2s, background-color .2s;
+}
+.btn-plus {
+    background-image: linear-gradient(to top, currentColor, currentColor), linear-gradient(to top, currentColor, currentColor);
+    background-size: 10px 2px, 2px 10px;
+}
+.btn:active {
+    box-shadow: inset 0 1px rgba(100,100,100,.1);
+}
+.btn:hover {
+    background-color: #e9e9e9;
+    color: #333;
+}
+````
 
