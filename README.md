@@ -586,7 +586,9 @@ Number.toLocaleString('en-US');
 // 另外，对于IE edge之前的版本，Number.toLocaleString()会自动补上两位小数，如果是不需要的，需要自己额外过滤掉。
 ````
 #### 订单甲减的效果
+````html
 <a href="javascript:" class="btn btn-plus" role="button" title="增加"></a>
+````
 ````css
 .btn {
     display: inline-block;
