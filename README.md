@@ -592,7 +592,7 @@ Number.toLocaleString('en-US');
 ````css
 .btn {
     display: inline-block;
-    background: #f0f0f0 no-repeat center; // 主要是这行和下面的.
+    background: #f0f0f0 no-repeat center; // 主要是这行和下面的.btn-plus
     border: 1px solid #d0d0d0;
     width: 24px; height: 24px;    
     border-radius: 2px;
