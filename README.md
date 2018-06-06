@@ -702,9 +702,42 @@ box-shadow: 2px 3px 4px rgba(0,0,0,.5);
 
 最终的解决方案来自 box-shadow 鲜为人知的第四个长度参数。 它排在模糊半径参数之后， 称作扩张半径。 这个参数会根据你指定的值去扩大或（当指定负值时） 缩小投影的尺寸。 举例来说， 一个 -5px 的扩张半径会把投影的宽度和高度各减少 10px（即每边各 5px）。  
 从逻辑上来说， 如果我们应用一个负的扩张半径， 而它的值刚好等于模糊半径， 那么投影的尺寸就会与投影所属元素的尺寸完全一致。 除非用偏移量（前两个长度参数） 来移动它， 我们将完全看不见任何投影。 因此， 如果给投影应用一个正的垂直偏移量， 我们就会在元素的底部看到一道投影， 而元素的另外三侧是没有投影的， 这正是我们一直苦苦追寻的效果：  
-box-shadow: 0 5px 4px -4px black;
-<strong>上面这么多话,其实可以理解成: box-shadow第一个参数,水平阴影,正数往右;第二个参数,垂直阴影,正数往下;第三个参数,模糊距离;第四个参数,阴影尺寸,由此参数可以联想到,假设模糊距离是2px,设置阴影尺寸是-2px,则正好抵消模糊.所以水平或者垂直阴影有一个设置的大于模糊距离,而模糊距离等于负的阴影尺寸,那阴影就是单边了.</strong>
-
+box-shadow: 0 5px 4px -4px black;  
+<strong>上面这么多话,其实可以理解成: box-shadow第一个参数,水平阴影,正数往右;第二个参数,垂直阴影,正数往下;第三个参数,模糊距离;第四个参数,阴影尺寸,由此参数可以联想到,假设模糊距离是2px,设置阴影尺寸是-2px,则正好抵消模糊.所以水平或者垂直阴影有一个设置的大于模糊距离,而模糊距离等于负的阴影尺寸,那阴影就是单边了.</strong>  
+box-shadow: 5px 0 4px -4px black, -5px 0 4px -4px black;  //左右投影
+#### 滤镜filter
+filter: blur() grayscale() drop-shadow();等, 空格隔开就可以了, 试了下 支持transition过渡,很好玩的. ie不支持,不过不影响使用.渐进增强.  
+毛玻璃效果:  
+````html
+<main>
+  <blockquote>
+    "The only way to get rid of a temptation[...]"
+    <footer>－
+      <cite>
+        Oscar Wilde,
+        The Picture of Dorian Gray
+      </cite>
+    </footer>
+  </blockquote>
+</main>
+````
+````css
+body, main::before {
+  background: url(图片) 0 / cover fixed;
+}
+main {
+  position: relative;
+  background: hsla(0,0%,100%,.3);
+  overflow: hidden; // 毛玻璃效果溢出部分隐藏
+}
+main::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  filter: blur(20px);
+  margin: -30px; // 正值的话毛玻璃接近border区域会清晰
+}
+````
 
 
 
