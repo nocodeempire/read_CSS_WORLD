@@ -640,3 +640,88 @@ img:hover {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 ````
+#### 折角效果
+````css
+.box {  //单个折角
+  background: #58a; //如果某些浏览器不支持 CSS渐变， 那第二行声明会被丢弃， 而此时我们至少还能得到一个简单的实色背景。
+  background: linear-gradient(-45deg, transparent 15px, #58a 0);  //渐变从右下角往上
+}
+````
+````css
+background: #58a;
+background:
+  linear-gradient(135deg, transparent 15px, #58a 0) top left,
+  linear-gradient(-135deg, transparent 15px, #58a 0) top right,
+  linear-gradient(-45deg, transparent 15px, #58a 0) bottom right,
+  linear-gradient(45deg, transparent 15px, #58a 0) bottom left;
+background-size: 50% 50%;
+background-repeat: no-repeat;
+````
+#### 弧形切角
+````css
+background: #58a;
+background:
+  radial-gradient(circle at top left,transparent 15px, #58a 0) top left,
+  radial-gradient(circle at top right,transparent 15px, #58a 0) top right,
+  radial-gradient(circle at bottom right,transparent 15px, #58a 0) bottom right,
+  radial-gradient(circle at bottom left,transparent 15px, #58a 0) bottom left;
+background-size: 50% 50%;
+background-repeat: no-repeat;
+````
+#### 梯形tab栏
+尽管优点多多， 但这个技巧也不是完美无缺的。 它存在一个非常大的缺点：斜边的角度依赖于元素的宽度。 因此， 当元素的内容长度不等时， 想要得到斜度一致的梯形就很伤脑筋了。 不过， 对于宽度变化不大的多个元素（比如导航菜单） 来说， 这个方法还是非常管用的。  
+````css
+nav > a {
+  position: relative;
+  display: inline-block;
+  padding: .3em 1em 0;
+}
+nav > a::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -1;
+  background: #ccc;
+  background-image: linear-gradient(
+  hsla(0,0%,100%,.6),
+  hsla(0,0%,100%,0));
+  border: 1px solid rgba(0,0,0,.4);
+  border-bottom: none;
+  border-radius: .5em .5em 0 0;
+  box-shadow: 0 .15em white inset;
+  transform: perspective(.5em) rotateX(5deg);
+  transform-origin: bottom; // bottom left直角梯形
+}
+````
+#### box-shadow单边投影
+box-shadow: 2px 3px 4px rgba(0,0,0,.5);  
+(1) 以该元素相同的尺寸1①和位置， 画一个 rgba(0,0,0,.5) 的矩形。  
+(2) 把它向右移 2px， 向下移 3px。  
+(3) 使用高斯模糊算法（或类似算法） 将它进行 4px 的模糊处理。 这在本质上表示在阴影边缘发生阴影色和纯透明色之间的颜色过渡长度近似于模糊半径的两倍（比如在这里是 8px）。  
+(4) 接下来， 模糊后的矩形与原始元素的交集部分会被切除掉， 因此它看起来像是在该元素的“后面”。  
+
+最终的解决方案来自 box-shadow 鲜为人知的第四个长度参数。 它排在模糊半径参数之后， 称作扩张半径。 这个参数会根据你指定的值去扩大或（当指定负值时） 缩小投影的尺寸。 举例来说， 一个 -5px 的扩张半径会把投影的宽度和高度各减少 10px（即每边各 5px）。  
+从逻辑上来说， 如果我们应用一个负的扩张半径， 而它的值刚好等于模糊半径， 那么投影的尺寸就会与投影所属元素的尺寸完全一致。 除非用偏移量（前两个长度参数） 来移动它， 我们将完全看不见任何投影。 因此， 如果给投影应用一个正的垂直偏移量， 我们就会在元素的底部看到一道投影， 而元素的另外三侧是没有投影的， 这正是我们一直苦苦追寻的效果：  
+box-shadow: 0 5px 4px -4px black;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
