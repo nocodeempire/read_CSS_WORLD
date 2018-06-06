@@ -1,5 +1,5 @@
 # read_CSS_WORLD
-读css世界案例记录
+读css世界案例记录 部分代码来自《css揭秘》
 
 #### 正在加载...效果
 ```html
@@ -612,4 +612,31 @@ Number.toLocaleString('en-US');
     color: #333;
 }
 ````
+#### 斜45的有背景按钮
+````css
+.button {
+  position: relative;
+  /* 其他的文字颜色、内边距等样式…… */
+}
+.button::before {
+  content: ''; /* 用伪元素来生成一个矩形 */
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -1;
+  background: #58a;
+  transform: skew(45deg);
+}
+````
+直接skew文字也会倾斜, 所以用伪元素生成背景  
 
+#### clip-path
+clip-path可以参与动画，只要我们的动画是在同一种形状函数（比如这里是 polygon()）之间进行的，而且点的数量是相同的。 因此， 如果我们希望图片在鼠标悬停时平滑地扩展为完整的面积.
+````css
+img {
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  transition: 1s clip-path;
+}
+img:hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+````
