@@ -1,5 +1,5 @@
 # read_CSS_WORLD
-读css世界案例记录 部分代码来自《css揭秘》
+读css世界案例记录 部分代码来自《css揭秘》,代码中注解写法仅为了方便阅读而已,不用较真.
 
 #### 正在加载...效果
 ```html
@@ -753,16 +753,48 @@ background-image: linear-gradient(rgba(0,0,0,.2) 50%, transparent 0);
 #### 用某款字体中的特定某个字
 ````css
 @font-face {
-font-family: Ampersand;
+font-family: tang;
 src: local('LiSu'),  // local用于指定本地字体的名称, 这样不会像使用src一样会产生请求
     local('KaiTi'),
     local('SimHei'),
-    local('Microsoft Yahei'),
+    local('Microsoft Yahei');
     unicode-range: U+5510; // unicode-range是基于“Unicode 码位”的. 
-    //可以这么做"&".charCodeAt(0).toString(16); 返回26; 这样你就得到了字符的十六进制码位，然后需要在码位前面加上 U+ 作为前缀。 
+    //可以这么做"唐".charCodeAt(0).toString(16); 返回5510; 这样你就得到了字符的十六进制码位，然后需要在码位前面加上 U+ 作为前缀。 
     //如果你想指定一个字符区间， 还是要加上 U+ 前缀， 比如 U+400-4FF。实际上对于这个区间来说， 你还可以使用通配符， 以这样的方式来写：U+4??。 
     //同时指定多个字符或多个区间也是允许的， 把它们用逗号隔开即可，比如 U+26, U+4??, U+2665-2670。 
 }
+body {
+  font-family: tang, Microsoft Yahei, SimHei;
+}
+````
+#### 下划线的几种实现
+````css
+a { /* 1 */
+  text-decoration: underline; 
+}
+a { /* 2 */
+  border-bottom: 1px solid gray;
+  text-decoration: none;
+}
+a { /* 3 这个效果是因为觉得线太靠下面 所以减小行高往上 */
+  display: inline-block;
+  border-bottom: 1px solid gray;
+  line-height: .9;
+} 
+a { /* 4 */
+  box-shadow: 0 -1px gray inset;
+}
+a { /* 5 */
+  background: linear-gradient(gray, gray) no-repeat;
+  background-size: 100% 1px;
+  background-position: 0 1.15em;
+}
+a { /* 6 虚线 */
+  background: linear-gradient(90deg, gray 66%, transparent 0) repeat-x;
+  background-size: .2em 2px;
+  background-position: 0 1em;
+}
+
 ````
 
 
