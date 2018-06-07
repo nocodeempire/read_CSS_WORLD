@@ -738,9 +738,32 @@ main::before {
   margin: -30px; // 正值的话毛玻璃接近border区域会清晰
 }
 ````
+#### 斑马条纹
+在表格中,我们可以根据nth-child(even)奇偶行来直接设置. 但如果是文字呢,大段大段的文字. 这里的思路是直接大背景用渐变实现.
+````css
+padding: .5em;  // 文字在盒子中是有0.5的padding的
+line-height: 1.5;
+background: beige; //不连写在background中是为了支持不支持渐变的远古时代浏览器,这样,起码背景色还是存在的
+background-size: auto 3em;
+background-origin: content-box; // 所以此处背景色是从content-box开始的
+background-image: linear-gradient(rgba(0,0,0,.2) 50%, transparent 0); 
+````
+这个方法总体来说是十分灵活的， 唯一可能破坏效果的情况②可能就是在改变 line-height 时忘了相应地调整 background-size。
 
-
-
+#### 用某款字体中的特定某个字
+````css
+@font-face {
+font-family: Ampersand;
+src: local('LiSu'),  // local用于指定本地字体的名称, 这样不会像使用src一样会产生请求
+    local('KaiTi'),
+    local('SimHei'),
+    local('Microsoft Yahei'),
+    unicode-range: U+5510; // unicode-range是基于“Unicode 码位”的. 
+    //可以这么做"&".charCodeAt(0).toString(16); 返回26; 这样你就得到了字符的十六进制码位，然后需要在码位前面加上 U+ 作为前缀。 
+    //如果你想指定一个字符区间， 还是要加上 U+ 前缀， 比如 U+400-4FF。实际上对于这个区间来说， 你还可以使用通配符， 以这样的方式来写：U+4??。 
+    //同时指定多个字符或多个区间也是允许的， 把它们用逗号隔开即可，比如 U+26, U+4??, U+2665-2670。 
+}
+````
 
 
 
