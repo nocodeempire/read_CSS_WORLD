@@ -794,7 +794,93 @@ a { /* 6 虚线 */
   background-size: .2em 2px;
   background-position: 0 1em;
 }
+/* 未来不必这么麻烦,有新属性 
+ text-decoration-color 用于自定义下划线或其他装饰效果的颜色。
+ text-decoration-style 用于定义装饰效果的风格（比如实线、虚线、波浪线等）。
+ text-decoration-skip 用于指定是否避让空格、字母降部或其他对象。
+ text-underline-position 用于微调下划线的具体摆放位置。
+*/
+````
+#### checkbox美化
+原理其实是用label替代;
+````html
+<input type="checkbox" id="awesome" />
+<label for="awesome">Awesome!</label>
+````
+````css
+input[type="checkbox"] + label::before {
+  content: '\a0'; /* 不换行空格 */
+  display: inline-block;
+  vertical-align: .2em;
+  width: .8em;
+  height: .8em;
+  margin-right: .2em;
+  border-radius: .2em;
+  background: silver;
+  text-indent: .15em;
+  line-height: .65;
+}
+input[type="checkbox"]:checked + label::before {
+  content: '\2713'; /* 代表是 √ */
+  background: yellowgreen;
+}
+/* 复选框以一种不损失可访问性的方式隐藏起来。 这意味着不能使用 display: none， 因为那样会把它从键盘 tab 键切换焦点的队列中完全删除。 */
+input[type="checkbox"] {
+  position: absolute;
+  clip: rect(0,0,0,0);
+}
+/* 还能更加美化效果,比如在聚焦或者禁用时改变其样式, 甚至可以用过渡或动画来让各个状态之间的切换更加平滑 */
+input[type="checkbox"]:focus + label::before {
+  box-shadow: 0 0 .1em .1em #58a;
+}
+input[type="checkbox"]:disabled + label::before {
+  background: gray;
+  box-shadow: none;
+  color: #555;
+}
+````
+#### 模态框(背景虚化)
+````html
+<main>这里将成为背景虚化的大容器</main>
+<dialog>
+  这是弹出框,但存在兼容性问题,实际项目建议直接用一个div代替吧.
+</dialog>
+<button>按钮</button>
+````
+````css
+main {
+  transition: .6s filter;
+}
+main.de-emphasized {  /* js为其添加类名 */
+  filter: blur(3px) contrast(.8) brightness(.8);
+}
+````
+````js
+var but = document.querySelector("button");
+var dialog = document.querySelector("dialog");
+but.onclick = function() {
+  main.className = "de-emphasized";
+  dialog.showModal();
+}
+````
+如果不需要虚化的话其实还有一种实现思路,那就是增加弹出框的outline,这样的话只需要一层标签就能实现.
 
+#### animation动画
+就摘录一个例子. 是一个正方形的容器中有一张很长的图片,鼠标悬浮上去的时候图片滚动,移开的时候暂停.
+````css
+@keyframes panoramic {
+  to { background-position: 100% 0; }
+}
+.panoramic {
+  width: 150px; height: 150px;
+  background: url("img/naxos-greece.jpg");
+  background-size: auto 100%;
+  animation: panoramic 10s linear infinite alternate;
+  animation-play-state: paused; /* 动画一直存在 只是一开始是暂时的 */
+}
+.panoramic:hover, .panoramic:focus {
+  animation-play-state: running;
+}
 ````
 
 
@@ -812,3 +898,30 @@ a { /* 6 虚线 */
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 追求卓越的道路是永无止境的！
