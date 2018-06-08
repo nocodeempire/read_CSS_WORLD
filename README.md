@@ -494,7 +494,7 @@ http://www.zhangxinxu.com/wordpress/2017/12/svg-filter-fuse-gooey-effect/
 或者插件 jQuery图片旋转插件jQueryRotate.js
 ````html
 <canvas id="cv"></canvas>
-<img id="cvImg" width="128" height="96" src="mm1.jpg" />
+<img id="cvImg" width="128" height="96" src="https://vuejs.org/images/logo.png" />
 ````
 ````js
 window.onload = function(){
