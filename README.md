@@ -358,7 +358,7 @@ body { font-size: 16px; }
         </ul>
     </div>
 </body>
-<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/2.2.2/jquery.js"></script>
 <script>
     $(document).scroll(function(){
         console.log($(document).scrollTop());
