@@ -882,6 +882,45 @@ but.onclick = function() {
   animation-play-state: running;
 }
 ````
+#### 多列等高
+````html
+<div class="web_width">
+  <div class="left"></div>
+  <div class="right"></div>
+</div>
+````
+````css
+.web_width{
+  width: 100%;
+  overflow: hidden;			//关键所在
+}
+.left{
+  float: left;
+  width: 20%;
+  min-height: 10em;
+  background: #66afe9;
+  padding-bottom: 2000px;		//关键所在
+  margin-bottom: -2000px;		//关键所在
+}
+.right{
+  float: right;
+  width: 80%;
+  height: 20em;
+  background: #f00;
+}
+````
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
