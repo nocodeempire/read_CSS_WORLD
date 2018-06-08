@@ -180,7 +180,6 @@ div {
 .content {
   display: inline-block;
   line-height: 20px;
-  margin: 0 20px;
   vertical-align: middle;  /* 设置vertical-align: middle使得content元素middle居中 */
 }
 ```
