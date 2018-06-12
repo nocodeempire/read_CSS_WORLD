@@ -905,7 +905,13 @@ but.onclick = function() {
   background: #f00;
 }
 ````
-
+#### 高亮效果
+````css
+img:hover {
+  filter:brightness(1.2);
+  transition: all 1s
+}
+````
 
 
 
