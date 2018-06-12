@@ -927,7 +927,58 @@ but.onclick = function() {
 一行5个元素，采用双层包装的方式，内包装固定20%（用flex-basis来控制20% 效果更好）  
 本方案中没有采用 justify-content: space-around 来确定间距，而是采用双层包装：外层 20% 的 flex-basis 均等划分，内层width: auto 自动充满。如需padding/margin/border 在内层上添加，不影响布局  
 直接用 width: 20% ，有时候度量不精准，易引起换行，所以用 flex-basis 作为外层进行均分。
-![](https://camo.githubusercontent.com/c435e2fa6273fcf78d5a613d6553b3e8d3534f35/687474703a2f2f7777772e696d616f64612e636f6d2f732f696d672f6769746875622f332e6a7067)
+![](https://camo.githubusercontent.com/c435e2fa6273fcf78d5a613d6553b3e8d3534f35/687474703a2f2f7777772e696d616f64612e636f6d2f732f696d672f6769746875622f332e6a7067)   
+
+```html
+<div class='nav'>
+    <div class='nav-item'> <img> <span> 旅行 </span> </div> 
+    <div class='nav-item'> <img> <span> 惠生活 </span> </div> 
+    <div class='nav-item'> <img> <span> 购物 </span> </div> 
+    <div class='nav-item'> <img> <span> 时尚 </span> </div> 
+    <div class='nav-item'> <img> <span> 教育 </span> </div>
+    <div class='nav-item'> <img> <span> 数码控 </span> </div>
+    <div class='nav-item'> <img> <span> 热点 </span> </div>
+    <div class='nav-item'> <img> <span> 外卖 </span> </div>
+    <div class='nav-item'> <img> <span> 会员 </span> </div>
+    <div class='nav-item'> <img> <span> 设置 </span> </div>
+</div>
+```
+```css
+.nav {
+    display: flex;
+    flex-flow: row wrap;
+}
+.nav-item {
+    flex:0 0 20%;
+    display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+}
+.nav-item img{
+	height:3rem; width:3rem;border-radius:40%
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
