@@ -734,6 +734,24 @@ main::before {
   margin: -30px; // 正值的话毛玻璃接近border区域会清晰
 }
 ````
+高亮效果:
+````css
+img:hover {
+  filter:brightness(1.2);
+  transition: all 1s
+}
+````
+常用滤镜包括：  
+blur：失焦感的高斯模糊，默认0rem  
+opacity：透明度，默认1，全透明0  
+brightness：亮度，默认1，全黑0，曝光过度2+  
+saturate：饱和度，默认1，灰色0，艳丽2+  
+contrast：对比度，默认1，全灰0，黑白分明2+  
+grayscale：叠加灰度，默认0，灰色1  
+sepia：叠加褐色，默认0，褐色1  
+invert：反色，默认0，全灰0.5，反色1  
+drop-shadow：透明区域无阴影的 box-shadow  
+
 #### 斑马条纹
 在表格中,我们可以根据nth-child(even)奇偶行来直接设置. 但如果是文字呢,大段大段的文字. 这里的思路是直接大背景用渐变实现.
 ````css
@@ -905,13 +923,7 @@ but.onclick = function() {
   background: #f00;
 }
 ````
-#### 高亮效果
-````css
-img:hover {
-  filter:brightness(1.2);
-  transition: all 1s
-}
-````
+
 
 
 
