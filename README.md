@@ -923,7 +923,11 @@ but.onclick = function() {
   background: #f00;
 }
 ````
-
+#### nav栏 一行5个
+一行5个元素，采用双层包装的方式，内包装固定20%（用flex-basis来控制20% 效果更好）  
+本方案中没有采用 justify-content: space-around 来确定间距，而是采用双层包装：外层 20% 的 flex-basis 均等划分，内层width: auto 自动充满。如需padding/margin/border 在内层上添加，不影响布局  
+直接用 width: 20% ，有时候度量不精准，易引起换行，所以用 flex-basis 作为外层进行均分。
+![](https://camo.githubusercontent.com/c435e2fa6273fcf78d5a613d6553b3e8d3534f35/687474703a2f2f7777772e696d616f64612e636f6d2f732f696d672f6769746875622f332e6a7067)
 
 
 
