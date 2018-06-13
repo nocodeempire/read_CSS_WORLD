@@ -959,6 +959,13 @@ but.onclick = function() {
 }
 ```
 
+#### 文字模糊效果
+```css
+.blurry-text {
+   color: transparent;
+   text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+```
 
 
 
