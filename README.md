@@ -976,47 +976,71 @@ but.onclick = function() {
   <li>Coco</li>
 </ul>
 ```
-```css
-ul {
+```less
+ul
+{
     display: flex;
     position: absolute;
     width: 800px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
+    // 从外部进入ul的动画
+    li {
+        position: relative;
+        padding: 20px;
+        font-size: 24px;
+        color: #000;
+        line-height: 1;
+        transition: 0.2s all linear;
+        cursor: pointer;
+        
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 0;
+            height: 100%;
+            border-bottom: 2px solid #000;
+            transition: 0.2s all linear;
+        }
 
-li {
-    position: relative;
-    padding: 20px;
-    font-size: 24px;
-    color: #000;
-    line-height: 1;
-    transition: 0.2s all linear;
-    cursor: pointer;
+        &:hover::before {
+            width: 100%;
+            top: 0;
+            left: 0;
+            transition-delay: 0.1s;
+            border-bottom-color: #000;
+        }
+        
+        &:last-child {
+            &:before{
+              left: 100%;
+            }
+            &:hover:before {
+             left: 0;
+            }
+        }
+        
+        &:first-child {
+            &:before{
+              left: 0;
+            }
+        }
+    }
+   // 往前一个li移动的动画 
+    &:hover {
+       li:before {
+         left: 100%;
+        }
+       li:hover:before {
+         left: 0;
+        }
+    }
 }
-
-li::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 100%;
-    width: 0;
-    height: 100%;
-    border-bottom: 2px solid #000;
-    transition: 0.2s all linear;
-}
-
-li:hover::before {
-    width: 100%;
-    top: 0;
-    left: 0;
-    transition-delay: 0.1s;
-    border-bottom-color: #000;
-    z-index: -1;
-}
-
-li:hover ~ li::before {
+// 往后一个li移动的动画
+li:hover + li::before {
     left: 0;
 }
 
@@ -1024,6 +1048,7 @@ li:active {
     background: #000;
     color: #fff;
 }
+
 ```
 
 
