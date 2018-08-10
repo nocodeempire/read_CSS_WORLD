@@ -1050,7 +1050,25 @@ li:active {
 }
 
 ```
-
+#### 条纹边框实现
+```css
+div{
+    width:100px;
+    height:100px;
+    background:#9c27b0;
+    border:20px dashed #2196f3;
+    position:relative;
+}
+div::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background:#fff;
+}
+```
 
 
 
