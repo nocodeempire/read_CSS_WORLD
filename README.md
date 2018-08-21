@@ -1069,7 +1069,13 @@ div::after{
     background:#fff;
 }
 ```
-
+#### 开启浏览器硬件加速
+```css
+{
+  will-change: transform;	/* 这一行可能有的浏览器暂时好不支持, 所以使用下面一行*/
+  transform: translateZ(0);
+}
+```
 
 
 
