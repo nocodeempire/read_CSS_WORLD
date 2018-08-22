@@ -1076,6 +1076,16 @@ div::after{
   transform: translateZ(0);
 }
 ```
+#### 背景图svg
+很多时候, 项目中使用的iconfont就几个,也没必要一定要建一个font的文件夹,可以直接用svg背景图代替.
+相关文档https://www.zhangxinxu.com/wordpress/2018/08/css-svg-background-image-base64-encode/
+```css
+.icon-arrow-down {
+    width: 20px; height: 20px;
+    background: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cpath fill='%2300A5E0' d='M145.659,68.949c-5.101-5.208-13.372-5.208-18.473,0L99.479,97.233 L71.772,68.949c-5.1-5.208-13.371-5.208-18.473,0c-5.099,5.208-5.099,13.648,0,18.857l46.18,47.14l46.181-47.14 C150.759,82.598,150.759,74.157,145.659,68.949z'/%3E%3C/svg%3E") no-repeat center;
+    background-size: 100%;
+}
+```
 
 
 
