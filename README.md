@@ -1086,7 +1086,10 @@ div::after{
     background-size: 100%;
 }
 ```
-
+#### 好看的颜色
+```css
+linear-gradient(to right, rgb(236, 132, 212), rgba(236, 132, 212, 0.7))
+```
 
 
 
